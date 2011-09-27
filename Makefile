@@ -22,5 +22,6 @@ all: $(TARGET)
 clean:
 	rm -f $(EXECS) *.o *.a
 
-screencasts.a:print.o
+# without .h => globals.o
+screencasts.a:globals.o print.o error.o shapes.o models.o interaction.o initialization.o draw.o display.o
 	ar -rcs screencasts.a $^
