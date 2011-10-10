@@ -19,9 +19,9 @@ double dim=DEF_DIM;
 int th=DEF_TH;
 int ph=DEF_PH;
 int fov=DEF_FOV;
-double ecX=DEF_ECX;      /* eye center position x */
-double ecY=DEF_ECY;      /* eye center position y */
-double ecZ=DEF_ECZ;      /* eye center position z */
+double ecX=DEF_ECX;
+double ecY=DEF_ECY;
+double ecZ=DEF_ECZ;
 
 /*  LIGHTING  */
 int toggleLight=DEF_LIGHT;
