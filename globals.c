@@ -1,15 +1,37 @@
 #include "screencasts.h"
+/*  Global descriptions on screencasts.h  */
 
-char *windowName = "OpenGL screenscasts 11: Code Organization";
-int windowWidth = 500;
-int windowHeight = 450;
+/*  ID-used to keep screencasts separate  */
+int screencastID = 0;
 
-int toggleAxes = 1;
-int toggleValues = 1;
-int toggleMode = 0;
+/*  WINDOW  */
+char *windowName="OpenGL screenscasts XX: Placeholder";
+int windowHeight=DEF_WINDOW_HEIGHT;
+int windowWidth=DEF_WINDOW_WIDTH;
 
-double dim = 5.0;
-int th = 340;
-int ph = 30;
-int fov = 55;
-int asp = 1;
+/*  TOGGLE DRAW DISPLAYS  */
+int toggleAxes=DEF_AXES;
+int toggleParms=DEF_PARMS;
+
+/*  PROJECTION  */
+double asp=DEF_ASP;
+double dim=DEF_DIM;
+int th=DEF_TH;
+int ph=DEF_PH;
+int fov=DEF_FOV;
+double ecX=DEF_ECX;      /* eye center position x */
+double ecY=DEF_ECY;      /* eye center position y */
+double ecZ=DEF_ECZ;      /* eye center position z */
+
+/*  LIGHTING  */
+int toggleLight=DEF_LIGHT;
+int distance=DEF_DISTANCE;
+int ambient=DEF_AMBIENT;
+int diffuse=DEF_DIFFUSE;
+int emission=DEF_EMISSION;
+int specular=DEF_SPECULAR;
+int shininess=DEF_SHININESS;
+float shinyvec[1]={1};
+float lightY=DEF_L_Y;
+float white[]={1,1,1,1};
+int lightPh=DEF_L_PH;

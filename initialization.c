@@ -2,17 +2,33 @@
 
 void initializeGlobals()
 {
-  windowName = "OpenGL screenscasts 11: Code Organization";
-  windowWidth = 500;
-  windowHeight = 450;
+  /* WINDOW */
+  windowHeight=DEF_WINDOW_HEIGHT;
+  windowWidth=DEF_WINDOW_WIDTH;
 
-  toggleAxes = 0;
-  toggleValues = 1;
-  toggleMode = 0;
+  /* TOGGLE */
+  toggleAxes=DEF_AXES;
+  toggleParms=DEF_PARMS;
 
-  dim = 5.0;
-  th = 340;
-  ph = 30;
-  fov = 55;
-  asp = 1;
+  /* PROJECTION */
+  dim=DEF_DIM;
+  th=DEF_TH;
+  ph=DEF_PH;
+  fov=DEF_FOV;
+  asp=DEF_ASP;
+  ecX=DEF_ECX;
+  ecY=DEF_ECY;
+  ecZ=DEF_ECZ;
+
+  /* LIGHTING */
+  toggleLight=DEF_LIGHT;
+  distance=DEF_DISTANCE;
+  ambient=DEF_AMBIENT;
+  diffuse=DEF_DIFFUSE;
+  emission=DEF_EMISSION;
+  specular=DEF_SPECULAR;
+  shininess=DEF_SHININESS;
+  lightY=DEF_L_Y;
+  lightPh=DEF_L_PH;
+
 }

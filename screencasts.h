@@ -33,6 +33,8 @@
 
 /* GLOBALS (externs required here) */
 /* Don't forget to initialize globals! */
+extern int screencastID;
+
 /* window info */
 extern char *windowName;
 extern int windowWidth;
@@ -40,14 +42,29 @@ extern int windowHeight;
 
 /* toggle views */
 extern int toggleAxes;   /* toggle axes on and off */
-extern int toggleValues; /* toggle values on and off */
-extern int toggleMode;   /* projection mode */
+extern int toggleParms; /* toggle parameters on and off */
 
 /* view */
+extern double asp;/* aspect ratio */
 extern double dim;/* dimension of orthogonal box */
 extern int th;    /* azimuth of view angle */
 extern int ph;    /* elevation of view angle */
 extern int fov;   /* field of view for perspective */
-extern int asp;   /* aspect ratio */
+extern double ecX;      /* eye center position x */
+extern double ecY;      /* eye center position y */
+extern double ecZ;      /* eye center position z */
+
+/* lighting */
+extern int toggleLight;   /* toggle light */
+extern int distance;      /* light distance */
+extern int ambient;       /* ambient intensity % */
+extern int diffuse;       /* diffuse intensity % */
+extern int emission;      /* emission intensity % */
+extern int specular;      /* specular intensity % */
+extern int shininess;     /* shininess (power of two) */
+extern float shinyvec[1]; /* shininess (value) */
+extern float lightY;      /* elevation of light */
+extern float white[];     /* the color white */
+extern int lightPh;       /* light movement */
 
 #endif

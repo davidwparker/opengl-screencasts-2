@@ -9,9 +9,12 @@ int main(int argc,char* argv[])
 {
   initializeGlobals();
   /* screencast specific variables */
-  windowName = "OpenGL screenscasts 11: Code Organization";
-  screencastID = 11;
-  toggleLight = 0;
+  windowName = "OpenGL screenscasts 12: Lighting and Material Part 1: Setup and Normals";
+  screencastID = 12;
+  dim = 3;
+  fov = 50;
+  th = 335;
+  distance = 3;
 
   glutInit(&argc,argv);
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
@@ -27,4 +30,3 @@ int main(int argc,char* argv[])
   glutMainLoop();
   return 0;
 }
-
