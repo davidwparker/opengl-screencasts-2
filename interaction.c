@@ -81,10 +81,10 @@ void windowSpecial(int key,int x,int y)
   /*  Otherwise, just shift the screen */
   else {
     /*  Shift */
-    if (key == GLUT_KEY_RIGHT) ecX -= .5;
-    else if (key == GLUT_KEY_LEFT) ecX += .5;
-    else if (key == GLUT_KEY_UP) ecZ += .5;
-    else if (key == GLUT_KEY_DOWN) ecZ -= .5;
+    if (key == GLUT_KEY_RIGHT) ecX += .5;
+    else if (key == GLUT_KEY_LEFT) ecX -= .5;
+    else if (key == GLUT_KEY_DOWN) ecZ += .5;
+    else if (key == GLUT_KEY_UP) ecZ -= .5;
   }
 
   /*  Keep angles to +/-360 degrees */
