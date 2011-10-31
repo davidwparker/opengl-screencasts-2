@@ -5,7 +5,7 @@
  * ------
  * Draw the axes
  */
-void drawAxes() 
+void drawAxes(void)
 {
   if (toggleAxes) {
     /*  Length of axes */
@@ -92,7 +92,7 @@ void drawLight(void)
  *  ------
  *  Draw the parameters in the lower left corner
  */
-void drawParameters()
+void drawParameters(void)
 {
   if (toggleParms) {
     glColor3fv(white);
@@ -107,7 +107,7 @@ void drawParameters()
   }
 }
 
-void drawScene()
+void drawScene(void)
 {
   drawAxes();
   drawParameters();
@@ -118,9 +118,11 @@ void drawScene()
     drawScreencast12();
   else if (screencastID == 13)
     drawScreencast13();
+  else if (screencastID == 14)
+    drawScreencast14();
 }
 
-void drawScreencast11()
+void drawScreencast11(void)
 {
   /*
   cube(1,0,1, 1,1,1, 0);
@@ -142,14 +144,14 @@ void drawScreencast11()
   tower(4,0,0, 1,1,1.5, 30);
 }
 
-void drawScreencast12()
+void drawScreencast12(void)
 {
   // anything with lighting should be drawn after the light
   drawLight();
   cube(0,0,0, 1,1,1, 0);
 }
 
-void drawScreencast13()
+void drawScreencast13(void)
 {
   GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };
   GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };
@@ -306,4 +308,11 @@ void drawScreencast13()
   glutSolidSphere(1.0, 16, 16);
   glPopMatrix();
   
+}
+
+void drawScreencast14(void)
+{
+  drawLight();
+  currentTexture = textures[TEX_CRATE];
+  cube(0,0,0, 1,1,1, 0); 
 }

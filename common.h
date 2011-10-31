@@ -36,3 +36,12 @@
 #define DEF_SHININESS 0
 #define DEF_L_Y 0
 #define DEF_L_PH 90
+
+/*  Textures  */
+#define TEX_DEFAULT 0
+#define TEX_BRICK 1
+#define TEX_CRATE 2
+#define TEX_ICE 3
+#define TEX_FIRE 4
+#define TEX_EARTH 5
+#define TEX_WOOD 6

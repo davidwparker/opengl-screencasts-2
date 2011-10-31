@@ -35,3 +35,7 @@ float shinyvec[1]={1};
 float lightY=DEF_L_Y;
 float white[]={1,1,1,1};
 int lightPh=DEF_L_PH;
+
+/*  TEXTURES  */
+unsigned int textures[7];
+int currentTexture=TEX_DEFAULT;

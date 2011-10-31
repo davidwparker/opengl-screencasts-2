@@ -1,6 +1,6 @@
 #include "screencasts.h"
 
-void initializeGlobals()
+void initializeGlobals(void)
 {
   /* WINDOW */
   windowHeight=DEF_WINDOW_HEIGHT;
@@ -31,4 +31,25 @@ void initializeGlobals()
   lightY=DEF_L_Y;
   lightPh=DEF_L_PH;
 
+  /* TEXTURES */
+  currentTexture=TEX_DEFAULT;
+}
+
+void initializeTextures(void)
+{
+  /*
+    TEX_DEFAULT 0
+    TEX_BRICK 1
+    TEX_CRATE 2
+    TEX_ICE 3
+    TEX_FIRE 4
+    TEX_EARTH 5
+    TEX_WOOD 6
+   */
+  textures[TEX_BRICK] = loadTexBMP("txBrick14.bmp");
+  textures[TEX_CRATE] = loadTexBMP("txCrate.bmp");
+  textures[TEX_ICE] = loadTexBMP("txIce7.bmp");
+  textures[TEX_FIRE] = loadTexBMP("txLava1.bmp");
+  textures[TEX_EARTH] = loadTexBMP("txRock5.bmp");
+  textures[TEX_WOOD] = loadTexBMP("txWood3.bmp");
 }

@@ -53,6 +53,7 @@ void cone(double x,double y,double z,
  *     at (x,y,z)
  *     dimensions (dx,dy,dz)
  *     rotated th about the y axis
+ *  TODO: Refactor this!!!
  */
 void cube(double x,double y,double z,
 	  double dx,double dy,double dz,
@@ -74,46 +75,65 @@ void cube(double x,double y,double z,
   glRotated(th,0,1,0);
   glScaled(dx,dy,dz);
 
+  glEnable(GL_TEXTURE_2D);
+  /* using the current texture */
+  glBindTexture(GL_TEXTURE_2D,currentTexture);
+
   /* Cube */
   glBegin(GL_QUADS);
   /* front => ABCD yellow */
   glNormal3f(0,0,1);
-  glColor3f(1.0,1.0,0.0);
-  glVertex3fv(vertA);
-  glVertex3fv(vertB);
-  glVertex3fv(vertC);
-  glVertex3fv(vertD);
+  if (screencastID < 14)
+    glColor3f(1.0,1.0,0.0);
+  glTexCoord2f(0,0); glVertex3fv(vertA);
+  glTexCoord2f(1,0); glVertex3fv(vertB);
+  glTexCoord2f(1,1); glVertex3fv(vertC);
+  glTexCoord2f(0,1); glVertex3fv(vertD);
+  glEnd();
+
   /* back => FEHG red */
+  glBegin(GL_QUADS);
   glNormal3f(0,0,-1);
-  glColor3f(1.0,0.0,0.0);
-  glVertex3fv(vertF);
-  glVertex3fv(vertE);
-  glVertex3fv(vertH);
-  glVertex3fv(vertG);
+  if (screencastID < 14)
+    glColor3f(1.0,0.0,0.0);
+  glTexCoord2f(0,0); glVertex3fv(vertF);
+  glTexCoord2f(1,0); glVertex3fv(vertE);
+  glTexCoord2f(1,1); glVertex3fv(vertH);
+  glTexCoord2f(0,1); glVertex3fv(vertG);
+  //glEnd();
+  //glBegin(GL_QUADS);
   /* right => EADH green */
   glNormal3f(1,0,0);
+  //if (screencastID < 14)
   glColor3f(0.0,1.0,0.0);
-  glVertex3fv(vertE);
-  glVertex3fv(vertA);
-  glVertex3fv(vertD);
-  glVertex3fv(vertH);
+  glTexCoord2f(0,0); glVertex3fv(vertE);
+  glTexCoord2f(1,0); glVertex3fv(vertA);
+  glTexCoord2f(1,1); glVertex3fv(vertD);
+  glTexCoord2f(0,1); glVertex3fv(vertH);
+  glEnd();
+  glDisable(GL_TEXTURE_2D);
+
+  glBegin(GL_QUADS);
   /* left => BFGC blue */
   glNormal3f(-1,0,0);
-  glColor3f(0.0,0.0,1.0);
+  if (screencastID < 14)
+    glColor3f(0.0,0.0,1.0);
   glVertex3fv(vertB);
   glVertex3fv(vertF);
   glVertex3fv(vertG);
   glVertex3fv(vertC);
   /* top => EFBA turquoise */
   glNormal3f(0,1,0);
-  glColor3f(0.0,1.0,1.0);
+  if (screencastID < 14)
+    glColor3f(0.0,1.0,1.0);
   glVertex3fv(vertE);
   glVertex3fv(vertF);
   glVertex3fv(vertB);
   glVertex3fv(vertA);
   /* bottom => DCGH pink */
   glNormal3f(0,-1,0);
-  glColor3f(1.0,0.0,1.0);
+  if (screencastID < 14)
+    glColor3f(1.0,0.0,1.0);
   glVertex3fv(vertD);
   glVertex3fv(vertC);
   glVertex3fv(vertG);

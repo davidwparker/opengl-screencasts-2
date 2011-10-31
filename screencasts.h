@@ -22,14 +22,16 @@
 
 /* includes */
 #include "common.h" /* common is just defines */
-#include "print.h"  /* printing functions */
+#include "display.h"/* display -> setup scene to draw */
+#include "draw.h"   /* draw -> draw whatever objects in the scene */
 #include "error.h"  /* error convenience */
-#include "shapes.h" /* basic shapes (cube, cone, etc) */
-#include "models.h" /* complex objects */
+#include "fatal.h"  /* fatal convenience */
 #include "interaction.h"    /* user interactions (keyboard, mouse, etc) */
 #include "initialization.h" /* initialization */
-#include "draw.h"    /* draw -> draw whatever objects in the scene */
-#include "display.h" /* display -> setup scene to draw */
+#include "models.h"  /* complex objects */
+#include "print.h"   /* printing functions */
+#include "shapes.h"  /* basic shapes (cube, cone, etc) */
+#include "textures.h"/* texture functionality */
 
 /* GLOBALS (externs required here) */
 /* Don't forget to initialize globals! */
@@ -66,5 +68,9 @@ extern float shinyvec[1]; /* shininess (value) */
 extern float lightY;      /* elevation of light */
 extern float white[];     /* the color white */
 extern int lightPh;       /* light movement */
+
+/* textures */
+extern unsigned int textures[7]; /* holds our textures */
+extern int currentTexture;       /* current texture */
 
 #endif
