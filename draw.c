@@ -120,6 +120,8 @@ void drawScene(void)
     drawScreencast13();
   else if (screencastID == 14)
     drawScreencast14();
+  else if (screencastID == 15)
+    drawScreencast15();
 }
 
 void drawScreencast11(void)
@@ -315,4 +317,81 @@ void drawScreencast14(void)
   drawLight();
   currentTexture = textures[TEX_CRATE];
   cube(0,0,0, 1,1,1, 0); 
+}
+
+void drawScreencast15(void)
+{
+
+  GLenum minfilter = GL_NEAREST;
+  GLenum magfilter = GL_NEAREST;
+  GLenum env = GL_MODULATE;
+  //GLenum env = GL_REPLACE;
+
+  GLenum wraps = GL_CLAMP;
+  GLenum wrapt = GL_REPEAT;
+  //  GLenum wrapt = GL_MIRRORED_REPEAT;
+
+  
+  if (toggleLight)
+    drawLight();
+  /*
+  currentTexture = textures[TEX_CRATE];
+  cube(0,0,0, 1,1,1, 0);
+
+  currentTexture = textures[TEX_FIRE];
+  cone(2,0,0, 1,1, 5); 
+
+  currentTexture = textures[TEX_VENUS];
+  sphere(0,1,1.5, 0.5,0);
+  */
+  //currentTexture = textures[TEX_FIRE];
+  //currentTexture = textures[TEX_EARTH];
+  //currentTexture = textures[TEX_ICE];
+  //currentTexture = textures[TEX_DEFAULT];
+  //cylinder(-2,0,0, 1,1);
+  //currentTexture = textures[TEX_DEFAULT];
+
+  /*
+   * Other Texture functions/Parameters
+   */
+
+  glEnable(GL_TEXTURE_2D);  
+  currentTexture = textures[TEX_ICE];
+  glBindTexture(GL_TEXTURE_2D,currentTexture);
+  // Minification and Magnification Filters
+  // Used to perform calculations as to how a texel corresponds to 
+  //  a pixel on the screen
+  // GLenum minfilter = GL_NEAREST
+  // GLenum magfilter = GL_NEAREST
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minfilter);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magfilter);
+  // Clamp or Repeat texture outside of [0,1]
+  // GLenum wraps|wrapt = GL_REPEAT, GL_CLAMP, GL_CLAMP_TO_BORDER,
+  //                      GL_CLAMP_TO_EDGE, GL_MIRRORED_REPEAT
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wraps);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrapt);
+  // Specifies how texture values are combined with the color values of 
+  //  the fragment being processed
+  // GLenum env = GL_REPLACE, GL_BLEND, GL_MODULATE, GL_DECAL, 
+  //              GL_COMBINE, GL_ADD
+  glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, env);
+  // Determine the color to be used for GL_BLEND operations
+  //glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, env_color);
+  // 
+  //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color);
+  
+  glBegin(GL_QUADS);
+  glNormal3f(0,0,1);
+  glTexCoord2f(0,0); glVertex3f(0,0,0);
+  glTexCoord2f(2,0); glVertex3f(1,0,0);
+  glTexCoord2f(2,2); glVertex3f(1,1,0);
+  glTexCoord2f(0,2); glVertex3f(0,1,0);
+
+  glTexCoord2f(0,0); glVertex3f(-1,1,0);
+  glTexCoord2f(2,0); glVertex3f(1,1,0);
+  glTexCoord2f(2,2); glVertex3f(1,3,0);
+  glTexCoord2f(0,2); glVertex3f(-1,3,0);
+  glEnd();
+  glDisable(GL_TEXTURE_2D);
+
 }

@@ -45,3 +45,4 @@
 #define TEX_FIRE 4
 #define TEX_EARTH 5
 #define TEX_WOOD 6
+#define TEX_VENUS 7 

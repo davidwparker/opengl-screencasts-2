@@ -45,6 +45,7 @@ void initializeTextures(void)
     TEX_FIRE 4
     TEX_EARTH 5
     TEX_WOOD 6
+    TEX_VENUS 7
    */
   textures[TEX_BRICK] = loadTexBMP("txBrick14.bmp");
   textures[TEX_CRATE] = loadTexBMP("txCrate.bmp");
@@ -52,4 +53,5 @@ void initializeTextures(void)
   textures[TEX_FIRE] = loadTexBMP("txLava1.bmp");
   textures[TEX_EARTH] = loadTexBMP("txRock5.bmp");
   textures[TEX_WOOD] = loadTexBMP("txWood3.bmp");
+  textures[TEX_VENUS] = loadTexBMP("txVenus.bmp");
 }
