@@ -331,9 +331,7 @@ void drawScreencast15(void)
   GLenum wrapt = GL_REPEAT;
   //  GLenum wrapt = GL_MIRRORED_REPEAT;
 
-  
-  if (toggleLight)
-    drawLight();
+  drawLight();
   /*
   currentTexture = textures[TEX_CRATE];
   cube(0,0,0, 1,1,1, 0);
