@@ -83,7 +83,6 @@ void display(void)
  */
 void redisplayAll(void)
 {
-  //  displayReshape(windowWidth, windowHeight);
   displayProject(fov,asp,dim);
   glutPostRedisplay();
 }

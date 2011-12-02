@@ -122,31 +122,31 @@ void drawOverlay(void)
   // Draw the inside in grey
   glColor3f(0.6,0.6,0.6);
   glBegin(GL_QUADS);
-  // Port
+  // Left
   glVertex2f(-2,-1);
   glVertex2f(-2,+1);
   glVertex2f(-8,+1);
   glVertex2f(-8,-1);
-  // Starboard
+  // Right
   glVertex2f(+2,-1);
   glVertex2f(+2,+1);
   glVertex2f(+8,+1);
   glVertex2f(+8,-1);
-  // Port overhead
+  // Left overhead
   glVertex2f(-2.00,+0.8);
   glVertex2f(-2.00,+1);
-  glVertex2f(-0.03,+1);
-  glVertex2f(-0.03,+0.9);
-  // Starboard overhead
+  glVertex2f(-0.02,+1);
+  glVertex2f(-0.02,+0.9);
+  // Right overhead
   glVertex2f(+2.00,+0.8);
   glVertex2f(+2.00,+1);
-  glVertex2f(+0.03,+1);
-  glVertex2f(+0.03,+0.9);
-  // Windshield divide
-  glVertex2f(-0.03,+1);
-  glVertex2f(+0.03,+1);
-  glVertex2f(+0.03,+0);
-  glVertex2f(-0.03,+0);
+  glVertex2f(+0.02,+1);
+  glVertex2f(+0.02,+0.9);
+  // Middle divider
+  glVertex2f(-0.02,+1);
+  glVertex2f(+0.02,+1);
+  glVertex2f(+0.02,+0);
+  glVertex2f(-0.02,+0);
   glEnd();
   //  Reset model view matrix
   glPopMatrix();

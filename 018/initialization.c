@@ -14,6 +14,7 @@ void initializeGlobals(void)
   /* TOGGLE */
   toggleAxes=DEF_AXES;
   toggleParams=DEF_PARAMS;
+  toggleOverlay=DEF_OVERLAY;
 
   /* PROJECTION */
   dim=DEF_DIM;
